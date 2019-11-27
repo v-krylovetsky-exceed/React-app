@@ -39,8 +39,7 @@ export default class TodoApp extends React.Component {
     )
   }
 
-  handleChange = event =>
-    this.setState({ newTodo: event.target.value })
+  handleChange = event => this.setState({ newTodo: event.target.value })
 
   handleNewTodoKeyDown = event => {
     if (event.keyCode !== ENTER_KEY) {
@@ -62,25 +61,20 @@ export default class TodoApp extends React.Component {
     this.props.model.toggleAll(checked)
   }
 
-  toggle = todoToToggle =>
-    this.props.model.toggle(todoToToggle)
+  toggle = todoToToggle => this.props.model.toggle(todoToToggle)
 
-  destroy = todo =>
-    this.props.model.destroy(todo)
+  destroy = todo => this.props.model.destroy(todo)
 
-  edit = todo =>
-    this.setState({ editing: todo.id })
+  edit = todo => this.setState({ editing: todo.id })
 
   save = (todoToSave, text) => {
     this.props.model.save(todoToSave, text)
     this.setState({ editing: null })
   }
 
-  cancel = () =>
-    this.setState({ editing: null })
+  cancel = () => this.setState({ editing: null })
 
-  clearCompleted = () =>
-    this.props.model.clearCompleted()
+  clearCompleted = () => this.props.model.clearCompleted()
 
   render() {
     const { todos } = this.props.model
@@ -118,13 +112,12 @@ export default class TodoApp extends React.Component {
 
     const footer = (activeTodoCount || completedCount)
       ? <TodoFooter
-          count={activeTodoCount}
-          completedCount={completedCount}
-          nowShowing={this.state.nowShowing}
-          onClearCompleted={this.clearCompleted}
-        />
+        count={activeTodoCount}
+        completedCount={completedCount}
+        nowShowing={this.state.nowShowing}
+        onClearCompleted={this.clearCompleted}
+      />
       : null
-
     const main = !todos.length
       ? null
       : (
@@ -164,3 +157,4 @@ export default class TodoApp extends React.Component {
     )
   }
 }
+

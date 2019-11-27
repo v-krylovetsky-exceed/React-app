@@ -25,11 +25,13 @@ export default {
     }
 
     var store = localStorage.getItem(namespace);
+
     return (store && JSON.parse(store)) || [];
   },
 
-  extend: function() {
+  extend: function () {
     var newObj = {};
+    
     for (var i = 0; i < arguments.length; i++) {
       var obj = arguments[i];
       for (var key in obj) {
@@ -38,6 +40,7 @@ export default {
         }
       }
     }
+
     return newObj;
   },
 }

@@ -7,12 +7,9 @@ import Utils from './Utils'
 export default class TodoFooter extends React.Component {
   render() {
     const { completedCount, count, nowShowing, onClearCompleted } = this.props
-    const clearButton = completedCount === 0
-      ? null
-      : (
+    const clearButton = completedCount === 0 ? null: (
         <button
-          className="clear-completed"
-          onClick={onClearCompleted}>
+          className="clear-completed" onClick={onClearCompleted}>
           Clear completed
         </button>
       )
@@ -26,24 +23,24 @@ export default class TodoFooter extends React.Component {
           <li>
             <a
               href="#/"
-              className={classNames({selected: nowShowing === defs.ALL_TODOS})}>
-                All
+              className={classNames({ selected: nowShowing === defs.ALL_TODOS })}>
+              All
             </a>
           </li>
           {' '}
           <li>
             <a
               href="#/active"
-              className={classNames({selected: nowShowing === defs.ACTIVE_TODOS})}>
-                Active
+              className={classNames({ selected: nowShowing === defs.ACTIVE_TODOS })}>
+              Active
             </a>
           </li>
           {' '}
           <li>
             <a
               href="#/completed"
-              className={classNames({selected: nowShowing === defs.COMPLETED_TODOS})}>
-                Completed
+              className={classNames({ selected: nowShowing === defs.COMPLETED_TODOS })}>
+              Completed
             </a>
           </li>
         </ul>
